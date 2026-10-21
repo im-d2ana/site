@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+// 1. Импортируем createHashRouter вместо createBrowserRouter
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import List from './list/List';
 import Main from './main/Main';
@@ -13,7 +14,8 @@ import Testing from './testing/Testing';
 import { Provider } from 'react-redux';
 import store from './store';
 
-const router = createBrowserRouter([
+// 2. Создаем Hash Router
+const router = createHashRouter([
   {path: '',
     element: <Main />,
   },
@@ -41,6 +43,5 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
 
 reportWebVitals();
